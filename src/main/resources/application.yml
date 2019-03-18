@@ -1,0 +1,32 @@
+spring:
+  application:
+    name:
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+  profiles:
+    active: dev
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port:
+---
+spring:
+  profiles: dev
+  datasource:
+    url:
+
+---
+spring:
+  profiles: test
+  datasource:
+    schema: classpath:db/inti.sql
+
+---
+spring:
+  profiles: uat
+
+---
+spring:
+  profiles: prod
